@@ -6,11 +6,11 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/11/18 04:31:08 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/11/28 01:10:36 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include <so_long.h>
 #include <stdio.h>
 
 int main(void)
