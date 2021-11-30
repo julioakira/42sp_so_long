@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2021/11/29 16:59:55 by jakira-p         ###   ########.fr        #
+#    Updated: 2021/11/29 21:50:17 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ LINKER_FLAGS = -Xlinker --verbose
 INCLUDES = -I ./includes -I ./libft -I ./mlx
 
 LIBS = -L ./libft -lft -L ./mlx -lmlx
-
 
 MLX_FLAGS = -lXext -lX11
 
@@ -56,17 +55,17 @@ clean:
 	@$(MAKE) -s -C ./libft clean
 	@echo "[X] libft cleaned successfully"
 	@echo "[ ] Cleaning up MiniLibX..."
-	$(MAKE) -C ./mlx clean
+	$(MAKE) -s -C ./mlx clean
 	@echo "[X] MiniLibX cleaned successfully"
 
 
 fclean: clean
 	rm -rf $(NAME)
 	@echo "[ ] Cleaning up libft..."
-	@$(MAKE) -C ./libft fclean
+	@$(MAKE) -s -C ./libft fclean
 	@echo "[X] libft cleaned successfully"
 	@echo "[ ] Cleaning up MiniLibX..."
-	$(MAKE) -C ./mlx clean
+	$(MAKE) -s -C ./mlx clean
 	@echo "[X] MiniLibX cleaned successfully"
 
 re:
@@ -82,4 +81,4 @@ mlx:
 	@$(MAKE) -s -C ./mlx
 	@echo "[X] MiniLibX compiled successfully"
 
-.PHONY: all clean fclean re mlx libft
+.PHONY: all clean fclean re mlx libft val
