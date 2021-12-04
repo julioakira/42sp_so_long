@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2021/11/29 21:50:17 by jakira-p         ###   ########.fr        #
+#    Updated: 2021/12/04 02:25:42 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,14 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_DIR = src/
 
+UTILS_DIR = utils/
+
 DIST_DIR = dist/
 
-SRC_FILES = $(SRC_DIR)test.c \
+SRC_FILES = $(SRC_DIR)main.c \
+			$(SRC_DIR)key_handlers.c \
+			$(SRC_DIR)window_handlers.c \
+			$(UTILS_DIR)struct_utils.c \
 
 OBJS = $(addprefix $(DIST_DIR),$(notdir $(SRC_FILES:.c=.o)))
 
@@ -43,9 +48,13 @@ val: $(NAME)
 	--show-leak-kinds=all ./${NAME}
 
 $(NAME): $(OBJS) libft mlx
-	$(CC) $(CFLAGS) $< $(INCLUDES) $(LIBS) $(MLX_FLAGS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(INCLUDES) $(LIBS) $(MLX_FLAGS) -o $@
 
 $(DIST_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(DIST_DIR)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(DIST_DIR)$(notdir $@)
+
+$(DIST_DIR)%.o: $(UTILS_DIR)%.c
 	@mkdir -p $(DIST_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(DIST_DIR)$(notdir $@)
 
