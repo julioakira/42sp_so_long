@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   new_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/07 05:03:41 by jakira-p         ###   ########.fr       */
+/*   Created: 2021/12/07 02:40:49 by jakira-p          #+#    #+#             */
+/*   Updated: 2021/12/07 04:52:00 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
+#include <so_long.h>
 
-#include <mlx.h>
-#include <libft.h>
-#include "constants.h"
-#include "structs.h"
-
-// Check key hook events
-
-// Initializers
-void	new_game(t_game *game);
-void	init_window(t_game *game);
-
-
-// Utils
-void	free_and_nullify(void *ptr);
-
-// Handlers
-int		handle_close(t_game *game);
-int		key_hooks(int key_code, t_game *game);
-
-#endif
+// 1L << 2 -> ButtonPressMask
+void	new_game(t_game *game)
+{
+	game->mlx = mlx_init();
+	game->window = mlx_new_window(game->mlx, WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
+	mlx_hook(game->window, 17, 1L << 2, handle_close, &game);
+	mlx_key_hook(game->window, key_hooks, &game);
+	mlx_loop(game->mlx);
+}

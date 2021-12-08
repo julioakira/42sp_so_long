@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_handlers.c                                     :+:      :+:    :+:   */
+/*   handle_close.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 20:16:11 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/07 04:49:01 by jakira-p         ###   ########.fr       */
+/*   Created: 2021/12/07 02:34:22 by jakira-p          #+#    #+#             */
+/*   Updated: 2021/12/07 05:15:51 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 #include <stdio.h>
 
-// w -> 0x0077
-// a -> 0x0061
-// s -> 0x0073
-// d -> 0x0064
-// esc -> 0xFF1B
-int	is_allowed_key(int key_code)
+// destroy functions segfaults
+int	handle_close(t_game *game)
 {
-	if (key_code == NORTH || key_code == WEST
-		|| key_code == SOUTH || key_code == EAST
-		|| key_code == ESC)
-		return (key_code);
-	return (0);
-}
-
-// Segfaults when Esc is pressed... why?
-int	key_hooks(int key_code, t_game *game)
-{
-	if (key_code == ESC)
-		handle_close(game);
-	// Valid movements go here and return key_code
-	return (0);
+	if (game->mlx)
+	{
+		printf("passing here\n");
+		// mlx_destroy_window(game->mlx, game->window);
+		printf("does not pass here\n");
+		// mlx_destroy_display(game->mlx);
+		free_and_nullify(game->mlx);
+	}
+	exit(0);
 }

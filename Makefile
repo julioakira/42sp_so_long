@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2021/12/04 02:25:42 by jakira-p         ###   ########.fr        #
+#    Updated: 2021/12/07 05:03:57 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,10 @@ UTILS_DIR = utils/
 DIST_DIR = dist/
 
 SRC_FILES = $(SRC_DIR)main.c \
+			$(SRC_DIR)new_game.c \
 			$(SRC_DIR)key_handlers.c \
-			$(SRC_DIR)window_handlers.c \
-			$(UTILS_DIR)struct_utils.c \
+			$(SRC_DIR)handle_close.c \
+			$(UTILS_DIR)pointer_utils.c \
 
 OBJS = $(addprefix $(DIST_DIR),$(notdir $(SRC_FILES:.c=.o)))
 

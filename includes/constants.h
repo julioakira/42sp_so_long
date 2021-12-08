@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   constants.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/07 05:03:41 by jakira-p         ###   ########.fr       */
+/*   Created: 2021/12/07 04:12:03 by jakira-p          #+#    #+#             */
+/*   Updated: 2021/12/07 04:20:34 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
+#ifndef CONSTANTS_H
+# define CONSTANTS_H
 
-#include <mlx.h>
-#include <libft.h>
-#include "constants.h"
-#include "structs.h"
-
-// Check key hook events
-
-// Initializers
-void	new_game(t_game *game);
-void	init_window(t_game *game);
-
-
-// Utils
-void	free_and_nullify(void *ptr);
-
-// Handlers
-int		handle_close(t_game *game);
-int		key_hooks(int key_code, t_game *game);
+# define SO_LONG_H
+# define WINDOW_WIDTH 1024
+# define WINDOW_HEIGHT 768
+# define WINDOW_TITLE "so_long"
+#define NORTH 0x0077
+#define WEST 0x0061
+#define SOUTH 0x0073
+#define EAST 0x0064
+#define ESC 0xFF1B
 
 #endif
