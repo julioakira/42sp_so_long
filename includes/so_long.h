@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/07 05:03:41 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/08 23:07:02 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <mlx.h>
 #include <libft.h>
+#include <errno.h>
 #include "constants.h"
 #include "structs.h"
 

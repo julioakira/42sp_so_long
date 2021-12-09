@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/07 04:27:35 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/08 22:36:12 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_player {
 }	t_player;
 
 typedef struct s_map {
+	int	height;
+	int	width;
 	int	walls;
 	int	collectibles;
 	int	free_spaces;

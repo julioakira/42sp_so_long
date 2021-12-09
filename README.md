@@ -32,6 +32,17 @@ so_long made with ❤ for 42sp.
 
 - P.T finally released (or is it?)
 
+
+## Notes
+
+### Remembering pointers
+
+	```
+	-> pointer value
+	. pointer address
+	(*a).content == a->content;
+	```
+
 ## Links
 
 - [MiniLibX Docs](https://harm-smits.github.io/42docs/)
