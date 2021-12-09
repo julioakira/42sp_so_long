@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 05:02:41 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/07 05:03:28 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/08 16:14:05 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	free_and_nullify(void *ptr)
 {
-	free(ptr);
-	ptr = NULL;
+	if (ptr)
+	{
+		free(ptr);
+		ptr = NULL;
+	}
 }
