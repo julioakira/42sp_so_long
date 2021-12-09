@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_game.c                                         :+:      :+:    :+:   */
+/*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 02:40:49 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/09 00:22:08 by jakira-p         ###   ########.fr       */
+/*   Created: 2021/12/08 23:27:04 by jakira-p          #+#    #+#             */
+/*   Updated: 2021/12/09 01:16:10 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-// 1L << 2 -> ButtonPressMask
-void	new_game(t_game *game)
-{
-	game->mlx = mlx_init();
-	game->window = mlx_new_window(
-			game->mlx,
-			WINDOW_WIDTH,
-			WINDOW_HEIGHT,
-			WINDOW_TITLE
-			);
-	mlx_hook(game->window, 17, 1L << 2, handle_close, game);
-	mlx_key_hook(game->window, key_hooks, game);
-	mlx_loop(game->mlx);
-}
+// Make sure the map is rectangular
+// Possible characters
+//	0 -> empty space
+//	1 -> wall
+//	C -> collectible
+//	E -> exit
+//	P -> player starting position
+
+// t_map	parse_map(char *map_chunk)
+// {
+// 	t_map	*map;
+
+// }

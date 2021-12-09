@@ -6,13 +6,14 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:12:03 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/08 22:42:53 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:15:51 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONSTANTS_H
 # define CONSTANTS_H
 
+// so_long constants
 # define SO_LONG_H
 # define WINDOW_WIDTH 1024
 # define WINDOW_HEIGHT 768
@@ -22,5 +23,8 @@
 # define SOUTH 0x0073
 # define EAST 0x0064
 # define ESC 0xFF1B
+
+// get_next_line constants
+# define BUFFER_SIZE 1024
 
 #endif

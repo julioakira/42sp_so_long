@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/08 23:07:02 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/09 01:32:22 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@
 void	new_game(t_game *game);
 void	init_window(t_game *game);
 
+// get_next_line
+char	*get_next_line(int fd);
 
-// Utils
+// Pointer Utils
 void	free_and_nullify(void *ptr);
+
+// Map Utils
+int		is_valid_map(t_map *map);
+
+// Struct utils
+t_map	*new_map(char *map_chunk);
 
 // Handlers
 int		handle_close(t_game *game);

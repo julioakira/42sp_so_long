@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2021/12/07 05:03:57 by jakira-p         ###   ########.fr        #
+#    Updated: 2021/12/09 01:32:50 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,11 @@ SRC_FILES = $(SRC_DIR)main.c \
 			$(SRC_DIR)new_game.c \
 			$(SRC_DIR)key_handlers.c \
 			$(SRC_DIR)handle_close.c \
+			$(SRC_DIR)parse_map.c \
 			$(UTILS_DIR)pointer_utils.c \
+			$(UTILS_DIR)get_next_line.c \
+			$(UTILS_DIR)map_utils.c \
+			$(UTILS_DIR)struct_utils.c \
 
 OBJS = $(addprefix $(DIST_DIR),$(notdir $(SRC_FILES:.c=.o)))
 
@@ -47,6 +51,11 @@ val: $(NAME)
 	--track-fds=yes \
 	--errors-for-leak-kinds=all \
 	--show-leak-kinds=all ./${NAME}
+
+norm: $(NAME)
+	norminette -R CheckForbiddenSourceHeader ./libft
+	norminette -R CheckForbiddenSourceHeader ./src
+	norminette -R CheckForbiddenSourceHeader ./utils
 
 $(NAME): $(OBJS) libft mlx
 	$(CC) $(CFLAGS) $(OBJS) $(INCLUDES) $(LIBS) $(MLX_FLAGS) -o $@

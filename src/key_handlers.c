@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 20:16:11 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/08 23:08:21 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:20:05 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	is_allowed_key(int key_code)
 }
 
 // Segfaults when Esc is pressed... why?
+// Valid movements go here and return key_code
 int	key_hooks(int key_code, t_game *game)
 {
 	if (key_code == ESC)
 		handle_close(game);
-	// Valid movements go here and return key_code
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/08 23:21:11 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:22:33 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static void	eval_map_path(int argc)
 }
 
 // Dummy using argv just to avoid errors
-int main(int argc, char **argv)
+// Now we need to evaluate the map itself
+int	main(int argc, char **argv)
 {
 	t_game	game;
 

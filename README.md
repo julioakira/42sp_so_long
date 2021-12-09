@@ -43,6 +43,27 @@ so_long made with ❤ for 42sp.
 	(*a).content == a->content;
 	```
 
+### Calculating Enclosing walls
+
+	```
+	enclosing walls = (2 * width) + ((height - 2) * 2)
+
+	PROOF:
+
+	1111111111111
+	10010000000C1
+	1000011111001
+	1P0011E000001
+	1111111111111
+
+	32 walls closing
+	65 characters total
+
+	total map size = 13 width x 5 height
+
+	(13 * 2) + ((5 - 2) * 2)
+	```
+
 ## Links
 
 - [MiniLibX Docs](https://harm-smits.github.io/42docs/)

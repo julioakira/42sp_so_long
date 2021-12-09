@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/08 22:36:12 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/09 01:08:14 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,16 @@ typedef struct s_player {
 }	t_player;
 
 typedef struct s_map {
-	int	height;
-	int	width;
-	int	walls;
-	int	collectibles;
-	int	free_spaces;
+	char	*map_chunk;
+	int		is_valid;
+	int		height;
+	int		width;
+	int		enclosing_walls;
+	int		walls;
+	int		collectibles;
+	int		start;
+	int		exit;
+	int		free_spaces;
 }	t_map;
 
 // Maybe we will have a sprite variable here?
@@ -45,6 +50,7 @@ typedef struct s_object {
 typedef struct s_game {
 	void		*mlx;
 	void		*window;
+	t_map		*map;
 }	t_game;
 
 #endif
