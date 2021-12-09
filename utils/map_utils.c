@@ -6,14 +6,13 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:29:14 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/09 01:17:43 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/09 04:30:28 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
 // surr walls = (2 * width) + ((height - 2) * 2)
-
 static int	measure_enclosing(int width, int height)
 {
 	int	walls;

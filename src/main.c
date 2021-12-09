@@ -6,12 +6,11 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/09 00:22:33 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/09 04:23:09 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
-#include <stdio.h>
 
 static void	eval_map_path(int argc)
 {
@@ -34,7 +33,7 @@ int	main(int argc, char **argv)
 	game.mlx = NULL;
 	game.window = NULL;
 	eval_map_path(argc);
-	printf("Argv: %s\n", argv[1]);
+	is_valid_extension(argv[1]);
 	new_game(&game);
 	return (1);
 }
