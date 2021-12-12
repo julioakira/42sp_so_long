@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/09 01:08:14 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/11 17:17:58 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_map {
 	int		collectibles;
 	int		start;
 	int		exit;
-	int		free_spaces;
+	int		empty_spaces;
 }	t_map;
 
 // Maybe we will have a sprite variable here?

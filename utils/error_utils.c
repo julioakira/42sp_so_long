@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct_utils.c                                     :+:      :+:    :+:   */
+/*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 00:25:34 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/11 17:18:04 by jakira-p         ###   ########.fr       */
+/*   Created: 2021/12/11 19:34:24 by jakira-p          #+#    #+#             */
+/*   Updated: 2021/12/11 20:58:46 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-t_map	*new_map(char *map_chunk)
+void	exit_and_print(int err_code, char *message)
 {
-	t_map	*new_map;
-
-	new_map = ft_calloc(1, sizeof(t_map));
-	if (!new_map)
-		return (NULL);
-	new_map->map_chunk = map_chunk;
-	new_map->is_valid = 0;
-	new_map->height = 0;
-	new_map->width = 0;
-	new_map->walls = 0;
-	new_map->enclosing_walls = 0;
-	new_map->empty_spaces = 0;
-	new_map->collectibles = 0;
-	new_map->start = 0;
-	new_map->exit = 0;
-	return (new_map);
+	ft_putstr_fd(message, 1);
+	exit(err_code);
 }

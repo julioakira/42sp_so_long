@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2021/12/09 01:32:50 by jakira-p         ###   ########.fr        #
+#    Updated: 2021/12/11 20:28:32 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ SRC_FILES = $(SRC_DIR)main.c \
 			$(UTILS_DIR)get_next_line.c \
 			$(UTILS_DIR)map_utils.c \
 			$(UTILS_DIR)struct_utils.c \
+			$(UTILS_DIR)error_utils.c \
+			$(UTILS_DIR)line_parsing_utils.c \
 
 OBJS = $(addprefix $(DIST_DIR),$(notdir $(SRC_FILES:.c=.o)))
 

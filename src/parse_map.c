@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 23:27:04 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/09 04:31:29 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/11 19:52:59 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,14 @@ int	is_valid_extension(char *map_path)
 
 	path_len = ft_strlen(map_path);
 	if (path_len == 0 || path_len < 4)
-	{
-		ft_putstr_fd("Error: Invalid map path\n", 1);
-		exit(EINVAL);
-	}
+		exit_and_print(EINVAL, "Error: Invalid map path\n");
 	if (map_path[path_len - 1] == 'r'
 		&& map_path[path_len - 2] == 'e'
 		&& map_path[path_len - 3] == 'b'
 		&& map_path[path_len - 4] == '.')
 		return (1);
 	else
-	{
-		ft_putstr_fd("Error: Invalid map extension.\n", 1);
-		exit(EINVAL);
-	}
+		exit_and_print(EINVAL, "Error: Invalid map extension.\n");
 	return (0);
 }
 

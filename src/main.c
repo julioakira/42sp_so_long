@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/09 04:23:09 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/11 19:52:59 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ static void	eval_map_path(int argc)
 	if (argc != 2)
 	{
 		if (argc == 1)
-			ft_putstr_fd("You need to provide a map\n", 1);
+			exit_and_print(EINVAL, "You need to provide a map\n");
 		else if (argc > 2)
-			ft_putstr_fd("Too many arguments\n", 1);
-		exit(EINVAL);
+			exit_and_print(EINVAL, "Too many arguments\n");
 	}
 }
 
