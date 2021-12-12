@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 17:28:22 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/11 21:22:03 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:23:48 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,5 @@ void	validate_middle_lines(t_map *map, char *line)
 	if (line == NULL || ft_strlen(line) == 0)
 		exit_and_print(EINVAL, "Error: Map must be rectangular\n");
 	validate_and_count_characters(map, line);
+	map->height++;
 }
