@@ -6,20 +6,20 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:25:34 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/11 17:18:04 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/18 02:02:59 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-t_map	*new_map(char *map_chunk)
+t_map	*new_map(char **map_lines)
 {
 	t_map	*new_map;
 
 	new_map = ft_calloc(1, sizeof(t_map));
 	if (!new_map)
 		return (NULL);
-	new_map->map_chunk = map_chunk;
+	new_map->map_lines = map_lines;
 	new_map->is_valid = 0;
 	new_map->height = 0;
 	new_map->width = 0;

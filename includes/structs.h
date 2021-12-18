@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/11 17:17:58 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/17 22:57:42 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_player {
 }	t_player;
 
 typedef struct s_map {
-	char	*map_chunk;
+	char	**map_lines;
 	int		is_valid;
 	int		height;
 	int		width;

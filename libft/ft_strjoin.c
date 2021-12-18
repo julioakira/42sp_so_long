@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 01:20:19 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/08/22 00:40:34 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/18 03:51:17 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,28 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
-	size_t	idx;
-	size_t	s_idx;
+	char	*secondary;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	idx = 0;
-	s_idx = 0;
-	if (!result)
+	if (!s1 && !s2)
 		return (NULL);
-	while (s1[idx])
+	s1_len = 0;
+	s2_len = 0;
+	while (s1 && s1[s1_len])
+		s1_len++;
+	while (s2 && s2[s2_len])
+		s2_len++;
+	result = ft_calloc(s1_len + s2_len + 1, 1);
+	if (result)
 	{
-		result[idx] = s1[idx];
-		idx++;
+		secondary = result;
+		while (s1 && *s1)
+			*secondary++ = *s1++;
+		while (s2 && *s2)
+			*secondary++ = *s2++;
+		*secondary = 0;
+		return (result);
 	}
-	while (s2[s_idx])
-	{
-		result[idx] = s2[s_idx];
-		idx++;
-		s_idx++;
-	}
-	result[idx] = '\0';
-	return (result);
+	return (NULL);
 }

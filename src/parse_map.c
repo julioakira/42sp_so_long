@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 23:27:04 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/11 19:52:59 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/18 03:55:03 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	is_valid_extension(char *map_path)
 
 	path_len = ft_strlen(map_path);
 	if (path_len == 0 || path_len < 4)
-		exit_and_print(EINVAL, "Error: Invalid map path\n");
+		exit_and_print(EINVAL, "Error: Invalid map path.\n");
 	if (map_path[path_len - 1] == 'r'
 		&& map_path[path_len - 2] == 'e'
 		&& map_path[path_len - 3] == 'b'
@@ -36,10 +36,42 @@ int	is_valid_extension(char *map_path)
 	return (0);
 }
 
-t_map	*parse_map(char *map_chunk)
+// I can read all at once and then
+// split with ft_split
+static char	**read_map(char *filename)
+{
+	char	*map_read;
+	char	*tmp;
+	int		fd;
+	char	*holder;
+	char	**split_map;
+
+	fd = open(filename, O_RDONLY);
+	if (fd <= 0)
+		exit_and_print(EINVAL, "Error: Failed to open map file.\n");
+	map_read = ft_calloc(1, 1);
+	while (1)
+	{
+		tmp = get_next_line(fd);
+		if (!tmp)
+			break ;
+		holder = map_read;
+		map_read = ft_strjoin(holder, tmp);
+		free_and_nullify(tmp);
+		free_and_nullify(holder);
+	}
+	split_map = ft_split(map_read, '\n');
+	free_and_nullify(map_read);
+	close(fd);
+	return (split_map);
+}
+
+t_map	*retrieve_map(char *filename)
 {
 	t_map	*map;
+	char	**split_map;
 
-	map = new_map(map_chunk);
+	split_map = read_map(filename);
+	map = new_map(split_map);
 	return (map);
 }
