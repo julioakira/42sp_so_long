@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/18 01:57:16 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/19 03:36:29 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <fcntl.h>
 #include "constants.h"
 #include "structs.h"
+// Remove later
+#include <stdio.h>
 
 // Check key hook events
 
@@ -35,10 +37,12 @@ void	free_and_nullify(void *ptr);
 // Map Utils
 int		open_map_file(char *filename);
 int		is_valid_extension(char *map_path);
-int		is_valid_map(t_map *map);
+void	is_valid_map(t_map *map);
 
 // Map Parsing
 t_map	*retrieve_map(char *filename);
+void	parse_map_elements(t_map *map);
+void	free_map(t_map *map);
 
 // Line Parsing Utils
 void	validate_first_last_lines(t_map *map, char *line);

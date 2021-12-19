@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:29:14 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/11 20:33:38 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/19 05:28:58 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,30 @@ static int	measure_enclosing(int width, int height)
 	return (walls);
 }
 
-static int	is_wall_enclosed(t_map *map)
+// 19/12 -> Now we need to actually validate the map
+// Check again if it is rectangular?
+// Check for smallest possible size?
+void	is_valid_map(t_map *map)
 {
-	int	walls;
-
-	walls = measure_enclosing(map->width, map->height);
-	if (map->enclosing_walls != walls)
-		return (1);
-	return (0);
-}
-
-// 0 -> invalid map
-// 1 -> valid map
-// needs to do something when
-// if (is_valid == 1)
-int	is_valid_map(t_map *map)
-{
-	int	is_valid;
-
-	is_valid = 1;
-	if (map->exit == 0
-		|| map->collectibles == 0
-		|| map->start == 0
-		|| map->width <= map->height
-		|| is_wall_enclosed(map) != 0)
-		is_valid = 0;
-	return (is_valid);
+	parse_map_elements(map);
+	if (map->exit != 1)
+	{
+		free_map(map);
+		exit_and_print(EINVAL, "Error: Map must have at least one exit point.\n");
+	}
+	if (map->collectibles == 0)
+	{
+		free_map(map);
+		exit_and_print(EINVAL, "Error: Map must have at least one collectible.\n");
+	}
+	if (map->start != 1)
+	{
+		free_map(map);
+		exit_and_print(EINVAL, "Error: Map must have at least one starting point.\n");
+	}
+	if (measure_enclosing(map->width, map->height) != map->enclosing_walls)
+	{
+		free_map(map);
+		exit_and_print(EINVAL, "Error: Map must be wall enclosed.\n");
+	}
 }

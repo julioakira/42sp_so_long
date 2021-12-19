@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 23:27:04 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/18 03:55:03 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/19 05:09:16 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,16 @@ static char	**read_map(char *filename)
 	return (split_map);
 }
 
+void	free_map(t_map *map)
+{
+	int	idx;
+
+	idx = 0;
+	while (map->map_lines[idx])
+		free_and_nullify(map->map_lines[idx++]);
+	free_and_nullify(map->map_lines);
+}
+
 t_map	*retrieve_map(char *filename)
 {
 	t_map	*map;
@@ -74,4 +84,27 @@ t_map	*retrieve_map(char *filename)
 	split_map = read_map(filename);
 	map = new_map(split_map);
 	return (map);
+}
+
+void	parse_map_elements(t_map *map)
+{
+	int	l_idx;
+
+	l_idx = 0;
+	while (map->map_lines[l_idx])
+	{
+		l_idx++;
+		map->height++;
+	}
+	l_idx = 0;
+	while (map->map_lines[l_idx])
+	{
+		if (l_idx == 0)
+			validate_first_last_lines(map, map->map_lines[l_idx]);
+		else if (l_idx + 1 < map->height && l_idx != 0)
+			validate_middle_lines(map, map->map_lines[l_idx]);
+		else if (l_idx + 1 == map->height)
+			validate_first_last_lines(map, map->map_lines[l_idx]);
+		l_idx++;
+	}
 }

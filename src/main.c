@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/18 02:33:54 by jakira-p         ###   ########.fr       */
+/*   Updated: 2021/12/19 03:35:07 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ static void	eval_map_path(int argc)
 int	main(int argc, char **argv)
 {
 	t_game	game;
+	t_map *map;
 
 	game.mlx = NULL;
 	game.window = NULL;
 	eval_map_path(argc);
 	is_valid_extension(argv[1]);
-	retrieve_map(argv[1]);
+	map = retrieve_map(argv[1]);
+	is_valid_map(map);
 	new_game(&game);
 	return (1);
 }
