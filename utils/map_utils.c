@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:29:14 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/07 06:38:10 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/07 06:41:50 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	check_map_elements(t_map *map)
 	{
 		free_map(map);
 		exit_and_print(EINVAL,
-			"Error: Map must have only one exit.\n");
+			"Error: Map must have exactly one exit.\n");
 	}
 	if (map->collectibles == 0)
 	{
@@ -62,7 +62,7 @@ static void	check_map_elements(t_map *map)
 	{
 		free_map(map);
 		exit_and_print(EINVAL,
-			"Error: Map must have only one player spawn.\n");
+			"Error: Map must have exactly player spawn.\n");
 	}
 }
 
