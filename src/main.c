@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/19 03:35:07 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/07 04:26:17 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	eval_map_path(int argc)
 int	main(int argc, char **argv)
 {
 	t_game	game;
-	t_map *map;
+	t_map	*map;
 
 	game.mlx = NULL;
 	game.window = NULL;
