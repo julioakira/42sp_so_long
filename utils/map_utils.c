@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:29:14 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/07 05:00:12 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/07 05:16:18 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	measure_enclosing(int width, int height)
 	return (walls);
 }
 
-// smallest possible size? (5x3)
+// smallest possible size (5x3)
 static int	check_min_size(t_map *map)
 {
 	if (map->width < 5)
@@ -37,6 +37,7 @@ static int	check_min_size(t_map *map)
 	return (1);
 }
 
+// Check again later if all validations are being applied
 void	is_valid_map(t_map *map)
 {
 	parse_map_elements(map);
@@ -48,7 +49,7 @@ void	is_valid_map(t_map *map)
 	if (map->exit != 1)
 	{
 		free_map(map);
-		exit_and_print(EINVAL, "Error: Map must have at least one exit point.\n");
+		exit_and_print(EINVAL, "Error: Map must have only one exit.\n");
 	}
 	if (map->collectibles == 0)
 	{
@@ -58,7 +59,7 @@ void	is_valid_map(t_map *map)
 	if (map->start != 1)
 	{
 		free_map(map);
-		exit_and_print(EINVAL, "Error: Map must have at least one starting point.\n");
+		exit_and_print(EINVAL, "Error: Map must have only one player spawn.\n");
 	}
 	if (measure_enclosing(map->width, map->height) != map->enclosing_walls)
 	{
