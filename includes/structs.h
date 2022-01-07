@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/17 22:57:42 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/07 04:43:16 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@ typedef struct s_moves {
 	int	west;
 	int	north;
 }	t_moves;
+
+typedef struct s_mlx_img {
+	void	*img_addr;
+	int		width;
+	int		height;
+	int		img_bpp;
+}	t_mlx_img;
+
+typedef struct s_sprites {
+	t_mlx_img	*sprite;
+	char		type;
+}	t_sprites;
 
 // What constitutes a player?
 // Add sprite later
