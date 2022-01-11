@@ -6,21 +6,21 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/19 03:36:29 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/11 05:18:42 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include <mlx.h>
-#include <libft.h>
-#include <errno.h>
-#include <fcntl.h>
-#include "constants.h"
-#include "structs.h"
+# include <mlx.h>
+# include <libft.h>
+# include <errno.h>
+# include <fcntl.h>
+# include "constants.h"
+# include "structs.h"
 // Remove later
-#include <stdio.h>
+# include <stdio.h>
 
 // Check key hook events
 

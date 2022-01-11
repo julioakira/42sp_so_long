@@ -6,37 +6,45 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/07 04:43:16 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/11 05:33:38 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
-#define STRUCTS_H
+# define STRUCTS_H
 
-typedef struct s_moves {
-	int east;
-	int	south;
-	int	west;
-	int	north;
-}	t_moves;
-
+// https://github.com/keuhdall/images_example
+// https://qst0.github.io/ft_libgfx/man_mlx_new_image.html
 typedef struct s_mlx_img {
-	void	*img_addr;
+	void	*addr;
+	void	*data;
+	int		size_line;
+	int		endian;
 	int		width;
 	int		height;
-	int		img_bpp;
+	int		bpp;
 }	t_mlx_img;
 
 typedef struct s_sprites {
-	t_mlx_img	*sprite;
+	t_mlx_img	**sprite;
 	char		type;
 }	t_sprites;
 
 // What constitutes a player?
-// Add sprite later
+// Sprite needs to be here?
+// Besides position, what else do we need?
 typedef struct s_player {
-	t_moves	*moves;
+	t_sprites	*sprite;
+	int			x_pos;
+	int			y_pos;
 }	t_player;
+
+// Which properties does a game object has?
+typedef struct s_object {
+	t_sprites	*sprite;
+	int			x_pos;
+	int			y_pos;
+}	t_object;
 
 typedef struct s_map {
 	char	**map_lines;
@@ -50,12 +58,6 @@ typedef struct s_map {
 	int		exit;
 	int		empty_spaces;
 }	t_map;
-
-// Maybe we will have a sprite variable here?
-typedef struct s_object {
-	int	x_coord;
-	int	y_coord;
-}	t_object;
 
 // 	t_player	player;
 // Needs to add t_map map and int move_count

@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:29:14 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/07 06:41:50 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/07 23:41:55 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ static int	measure_enclosing(int width, int height)
 // smallest possible size (5x3)
 static void	check_map_size(t_map *map)
 {
-	if (map->width < 5)
+	if (map->width <= 5)
 	{
-		if (map->height <= 3)
+		if (map->height < 3)
 		{
 			free_map(map);
 			exit_and_print(EINVAL,
 				"Error: Map is smaller than the minimum size (5x3).\n");
 		}
 	}
-	if (map->height < 3)
+	if (map->height <= 3)
 	{
-		if (map->width <= 5)
+		if (map->width < 5)
 		{
 			free_map(map);
 			exit_and_print(EINVAL,
