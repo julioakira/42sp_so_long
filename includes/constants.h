@@ -6,22 +6,28 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:12:03 by jakira-p          #+#    #+#             */
-/*   Updated: 2021/12/18 03:02:22 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/18 02:42:37 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONSTANTS_H
 # define CONSTANTS_H
 
-// so_long constants
-# define WINDOW_WIDTH 1024
-# define WINDOW_HEIGHT 768
+// Window
+# define WINDOW_WIDTH 1280
+# define WINDOW_HEIGHT 720
 # define WINDOW_TITLE "so_long"
+// Keys
 # define NORTH 0x0077
 # define WEST 0x0061
 # define SOUTH 0x0073
 # define EAST 0x0064
 # define ESC 0xFF1B
+// Sprites Path
+# define PLAYER_SPRITE "./assets/xpm/player.xpm"
+# define COLLECTIBLE_SPRITE "./assets/xpm/collectible.xpm"
+# define EXIT_SPRITE "./assets/xpm/exit.xpm"
+# define WALL_SPRITE "./assets/xpm/wall.xpm"
 
 // get_next_line constants
 # define BUFFER_SIZE 100

@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/11 05:18:42 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/18 00:55:49 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 // Check key hook events
 
 // Initializers
-void	new_game(t_game *game);
+void	new_game(t_game *game, t_map *map);
 void	init_window(t_game *game);
 
 // get_next_line
@@ -38,6 +38,10 @@ void	free_and_nullify(void *ptr);
 int		open_map_file(char *filename);
 int		is_valid_extension(char *map_path);
 void	is_valid_map(t_map *map);
+
+// Sprites
+t_mlx_img	*img_from_file(void *mlx, char *img_path);
+t_sprite	*load_sprite(t_game *game, char *file_path, char type);
 
 // Map Parsing
 t_map	*retrieve_map(char *filename);

@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/11 05:33:38 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/12 06:00:27 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,20 @@ typedef struct s_mlx_img {
 typedef struct s_sprites {
 	t_mlx_img	**sprite;
 	char		type;
-}	t_sprites;
+}	t_sprite;
 
 // What constitutes a player?
 // Sprite needs to be here?
 // Besides position, what else do we need?
 typedef struct s_player {
-	t_sprites	*sprite;
+	t_sprite	*sprite;
 	int			x_pos;
 	int			y_pos;
 }	t_player;
 
 // Which properties does a game object has?
 typedef struct s_object {
-	t_sprites	*sprite;
+	t_sprite	*sprite;
 	int			x_pos;
 	int			y_pos;
 }	t_object;
@@ -60,7 +60,7 @@ typedef struct s_map {
 }	t_map;
 
 // 	t_player	player;
-// Needs to add t_map map and int move_count
+// Needs to int move_count
 typedef struct s_game {
 	void		*mlx;
 	void		*window;

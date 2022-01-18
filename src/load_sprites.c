@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   image_utils.c                                      :+:      :+:    :+:   */
+/*   load_sprites.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 04:00:29 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/12 05:04:20 by jakira-p         ###   ########.fr       */
+/*   Created: 2022/01/12 04:19:25 by jakira-p          #+#    #+#             */
+/*   Updated: 2022/01/17 23:59:58 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-t_mlx_img	*img_from_file(void *mlx, char *img_path)
+t_sprite	*load_sprite(t_game *game, char *file_path, char type)
 {
-	t_mlx_img	*img;
+	t_sprite	*sprite;
 
-	img = ft_calloc(1, sizeof(t_mlx_img));
-	if (!img)
-		return (NULL);
-	img->addr = mlx_xpm_file_to_image(
-			mlx,
-			img_path,
-			&img->width,
-			&img->height);
-	img->data = mlx_get_data_addr(
-			mlx,
-			&img->bpp,
-			&img->size_line,
-			&img->endian);
-	return (img);
+	sprite = (t_sprite *)ft_calloc(1, sizeof(t_sprite));
+	sprite->type = type;
+	sprite->sprite = ft_calloc(1, sizeof(t_mlx_img *));
+	sprite->sprite[0] = img_from_file(game->mlx, file_path);
+	sprite->sprite[1] = NULL;
+	return (sprite);
 }

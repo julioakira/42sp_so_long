@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/07 04:26:17 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/18 00:55:42 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	main(int argc, char **argv)
 	is_valid_extension(argv[1]);
 	map = retrieve_map(argv[1]);
 	is_valid_map(map);
-	new_game(&game);
+	new_game(&game, map);
 	return (1);
 }
