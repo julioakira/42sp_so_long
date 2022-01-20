@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:28:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/18 00:55:42 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/20 05:27:16 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static void	eval_map_path(int argc)
 	}
 }
 
-// Now we need to evaluate the map itself
 int	main(int argc, char **argv)
 {
 	t_game	game;

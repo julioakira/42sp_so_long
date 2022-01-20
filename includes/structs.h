@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/12 06:00:27 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/20 02:19:47 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_mlx_img {
 }	t_mlx_img;
 
 typedef struct s_sprites {
-	t_mlx_img	**sprite;
+	t_mlx_img	*sprite;
 	char		type;
 }	t_sprite;
 

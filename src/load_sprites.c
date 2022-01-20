@@ -6,20 +6,48 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 04:19:25 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/17 23:59:58 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/20 03:26:05 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-t_sprite	*load_sprite(t_game *game, char *file_path, char type)
+t_sprite	*load_player(t_game *game)
 {
-	t_sprite	*sprite;
+	t_sprite	*player;
 
-	sprite = (t_sprite *)ft_calloc(1, sizeof(t_sprite));
-	sprite->type = type;
-	sprite->sprite = ft_calloc(1, sizeof(t_mlx_img *));
-	sprite->sprite[0] = img_from_file(game->mlx, file_path);
-	sprite->sprite[1] = NULL;
-	return (sprite);
+	player = sprite_from_img(game, PLAYER_SPRITE, 'P');
+	return (player);
+}
+
+t_sprite	*load_collectible(t_game *game)
+{
+	t_sprite	*collectible;
+
+	collectible = sprite_from_img(game, COLLECTIBLE_SPRITE, 'C');
+	return (collectible);
+}
+
+t_sprite	*load_wall(t_game *game)
+{
+	t_sprite	*wall;
+
+	wall = sprite_from_img(game, WALL_SPRITE, '1');
+	return (wall);
+}
+
+t_sprite	*load_exit(t_game *game)
+{
+	t_sprite	*exit;
+
+	exit = sprite_from_img(game, EXIT_SPRITE, 'E');
+	return (exit);
+}
+
+t_sprite	*load_floor(t_game *game)
+{
+	t_sprite	*exit;
+
+	exit = sprite_from_img(game, FLOOR_SPRITE, '0');
+	return (exit);
 }

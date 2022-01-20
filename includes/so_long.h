@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/18 00:55:49 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/01/20 04:03:17 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,13 @@ void	is_valid_map(t_map *map);
 
 // Sprites
 t_mlx_img	*img_from_file(void *mlx, char *img_path);
-t_sprite	*load_sprite(t_game *game, char *file_path, char type);
+t_sprite	*sprite_from_img(t_game *game, char *file_path, char type);
+t_sprite	*load_player(t_game *game);
+t_sprite	*load_collectible(t_game *game);
+t_sprite	*load_wall(t_game *game);
+t_sprite	*load_exit(t_game *game);
+t_sprite	*load_floor(t_game *game);
+void		load_map(t_game *game, t_map *map);
 
 // Map Parsing
 t_map	*retrieve_map(char *filename);
@@ -53,7 +59,8 @@ void	validate_first_last_lines(t_map *map, char *line);
 void	validate_middle_lines(t_map *map, char *line);
 
 // Struct utils
-t_map	*new_map(char **map_lines);
+t_map		*new_map(char **map_lines);
+t_mlx_img	*new_img(void);
 
 // Handlers
 int		handle_close(t_game *game);
