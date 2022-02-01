@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 05:02:41 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/01 05:09:56 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/01 05:17:45 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	destroy_sprites(t_game *game)
 	while (game->sprites[idx])
 	{
 		destroy_mlx_image(game, game->sprites[idx]->sprite);
+		free_and_nullify(game->sprites[idx]);
 		idx++;
 	}
 	free_and_nullify(game->sprites);
