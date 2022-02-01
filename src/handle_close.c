@@ -6,13 +6,12 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 02:34:22 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/01 04:30:34 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/01 05:42:52 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-// destroy functions segfaults
 int	handle_close(t_game *game)
 {
 	if (game->mlx)
