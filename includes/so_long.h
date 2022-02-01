@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/20 04:03:17 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/01 04:29:58 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		is_valid_extension(char *map_path);
 void	is_valid_map(t_map *map);
 
 // Sprites
+void		destroy_sprites(t_game *game);
 t_mlx_img	*img_from_file(void *mlx, char *img_path);
 t_sprite	*sprite_from_img(t_game *game, char *file_path, char type);
 t_sprite	*load_player(t_game *game);

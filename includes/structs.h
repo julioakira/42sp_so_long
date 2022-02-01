@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/20 02:19:47 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/01 04:27:47 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_game {
 	void		*mlx;
 	void		*window;
 	t_map		*map;
+	t_sprite	**sprites;
 }	t_game;
 
 #endif

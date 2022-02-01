@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 05:16:44 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/20 05:45:50 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/01 04:29:08 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_sprite	**load_sprites(t_game *game)
 	sprites[3] = load_exit(game);
 	sprites[4] = load_floor(game);
 	sprites[5] = NULL;
-
+	game->sprites = sprites;
 	return (sprites);
 }
 
@@ -43,13 +43,12 @@ void	*select_sprite(t_sprite **sprites, char element)
 
 void	load_map(t_game *game, t_map *map)
 {
-	t_sprite	**sprites;
 	int			idx;
 	int			l_idx;
 
-	sprites = load_sprites(game);
 	idx = 0;
 	l_idx = 0;
+	load_sprites(game);
 	while (l_idx < map->height)
 	{
 		while (idx < map->width)
@@ -57,7 +56,7 @@ void	load_map(t_game *game, t_map *map)
 			mlx_put_image_to_window(
 				game->mlx,
 				game->window,
-				select_sprite(sprites, map->map_lines[l_idx][idx]),
+				select_sprite(game->sprites, map->map_lines[l_idx][idx]),
 				64 * idx + 1,
 				64 * l_idx + 1
 				);
