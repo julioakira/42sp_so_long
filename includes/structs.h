@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/01 04:27:47 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/02 04:25:13 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,13 @@ typedef struct s_sprites {
 }	t_sprite;
 
 // What constitutes a player?
-// Sprite needs to be here?
 // Besides position, what else do we need?
 typedef struct s_player {
-	t_sprite	*sprite;
 	int			x_pos;
 	int			y_pos;
+	int			collectible_count;
+	int			steps_count;
 }	t_player;
-
-// Which properties does a game object has?
-typedef struct s_object {
-	t_sprite	*sprite;
-	int			x_pos;
-	int			y_pos;
-}	t_object;
 
 typedef struct s_map {
 	char	**map_lines;

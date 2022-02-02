@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:25:34 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/20 04:02:34 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/02 04:22:29 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,18 @@ t_map	*new_map(char **map_lines)
 	new_map->start = 0;
 	new_map->exit = 0;
 	return (new_map);
+}
+
+t_player	*new_player(int x_pos, int y_pos)
+{
+	t_player	*new_player;
+
+	new_player = ft_calloc(1, sizeof(t_player));
+	if (!new_player)
+		return (NULL);
+	new_player->x_pos = x_pos;
+	new_player->y_pos = y_pos;
+	new_player->steps_count = 0;
+	new_player->collectible_count = 0;
+	return (new_player);
 }

@@ -6,16 +6,17 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 04:00:29 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/20 04:02:59 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/02 05:05:18 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
+// Might initialize img struct with a function
 t_mlx_img	*img_from_file(void *mlx, char *img_path)
 {
 	t_mlx_img	*img;
-	// Initialize img struct with a function
+
 	img = new_img();
 	img->addr = mlx_xpm_file_to_image(
 			mlx,

@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/02 02:29:24 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/02 05:03:52 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@
 // Check key hook events
 
 // Initializers
-void	new_game(t_game *game, t_map *map);
-void	init_window(t_game *game);
+void		new_game(t_game *game, t_map *map);
+void		init_window(t_game *game);
 
 // get_next_line
-char	*get_next_line(int fd);
+char		*get_next_line(int fd);
 
 // Pointer Utils
-void	free_and_nullify(void *ptr);
+void		free_and_nullify(void *ptr);
 
 // Map Utils
-int		open_map_file(char *filename);
-int		is_valid_extension(char *map_path);
-void	is_valid_map(t_map *map);
+int			open_map_file(char *filename);
+int			is_valid_extension(char *map_path);
+void		is_valid_map(t_map *map);
 
 // Sprites
 void		destroy_sprites(t_game *game);
@@ -51,23 +51,27 @@ t_sprite	*load_floor(t_game *game);
 void		load_map_sprites(t_game *game, t_map *map);
 
 // Map Parsing
-t_map	*retrieve_map(char *filename);
-void	parse_map_elements(t_map *map);
-void	free_map(t_map *map);
+t_map		*retrieve_map(char *filename);
+void		parse_map_elements(t_map *map);
+void		free_map(t_map *map);
 
 // Line Parsing Utils
-void	validate_first_last_lines(t_map *map, char *line);
-void	validate_middle_lines(t_map *map, char *line);
+void		validate_first_last_lines(t_map *map, char *line);
+void		validate_middle_lines(t_map *map, char *line);
 
 // Struct utils
 t_map		*new_map(char **map_lines);
 t_mlx_img	*new_img(void);
+t_player	*new_player(int x_pos, int y_pos);
+
+// Movement Utils
+t_player	*spawn_player(t_game *game);
 
 // Handlers
-int		handle_close(t_game *game);
-int		key_hooks(int key_code, t_game *game);
+int			handle_close(t_game *game);
+int			key_hooks(int key_code, t_game *game);
 
 // Error utils
-void	exit_and_print(int err_code, char *message);
+void		exit_and_print(int err_code, char *message);
 
 #endif
