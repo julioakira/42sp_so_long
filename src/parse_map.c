@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 23:27:04 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/07 04:26:31 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/02 02:35:23 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,12 @@ void	free_map(t_map *map)
 
 	idx = 0;
 	while (map->map_lines[idx])
-		free_and_nullify(map->map_lines[idx++]);
+	{
+		free_and_nullify(map->map_lines[idx]);
+		idx++;
+	}
 	free_and_nullify(map->map_lines);
+	free_and_nullify(map);
 }
 
 t_map	*retrieve_map(char *filename)

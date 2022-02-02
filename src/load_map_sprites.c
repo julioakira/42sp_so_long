@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_map.c                                         :+:      :+:    :+:   */
+/*   load_map_sprites.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -41,7 +41,7 @@ void	*select_sprite(t_sprite **sprites, char element)
 		return (sprites[4]->sprite->addr);
 }
 
-void	load_map(t_game *game, t_map *map)
+void	load_map_sprites(t_game *game, t_map *map)
 {
 	int			idx;
 	int			l_idx;
