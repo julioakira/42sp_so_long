@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_game.c                                         :+:      :+:    :+:   */
+/*   handle_player.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 02:40:49 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/03 04:02:30 by jakira-p         ###   ########.fr       */
+/*   Created: 2022/02/03 04:12:53 by jakira-p          #+#    #+#             */
+/*   Updated: 2022/02/03 04:13:01 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-// 1L << 2 -> ButtonPressMask
-void	new_game(t_game *game, t_map *map)
+// Starts to count from zero
+void	spawn_player(t_game *game)
 {
-	game->mlx = mlx_init();
-	game->window = mlx_new_window(
-			game->mlx,
-			map->width * 64,
-			map->height * 64,
-			WINDOW_TITLE
-			);
-	mlx_hook(game->window, 17, 1L << 2, handle_close, game);
-	mlx_key_hook(game->window, key_hooks, game);
-	load_map_sprites(game, map);
-	spawn_player(game);
-	mlx_loop(game->mlx);
+	int			x_pos;
+	int			y_pos;
+
+	x_pos = 0;
+	y_pos = 0;
+	while (game->map->map_lines[y_pos][x_pos])
+	{
+		if (game->map->map_lines[y_pos][x_pos] == 'P')
+			break ;
+		if (x_pos == game->map->width - 1)
+		{
+			x_pos = 0;
+			y_pos++;
+		}
+		x_pos++;
+	}
+	game->player = new_player(x_pos, y_pos);
 }

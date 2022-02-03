@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/02 05:03:52 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/03 04:01:39 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_mlx_img	*new_img(void);
 t_player	*new_player(int x_pos, int y_pos);
 
 // Movement Utils
-t_player	*spawn_player(t_game *game);
+void		spawn_player(t_game *game);
 
 // Handlers
 int			handle_close(t_game *game);
