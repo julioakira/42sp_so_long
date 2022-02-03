@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 05:02:41 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/02 05:04:50 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/03 05:33:15 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,10 @@ void	destroy_sprites(t_game *game)
 		idx++;
 	}
 	free_and_nullify(game->sprites);
+}
+
+void	destroy_player(t_game *game)
+{
+	if (game->player)
+		free_and_nullify(game->player);
 }

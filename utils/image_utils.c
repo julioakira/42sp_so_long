@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 04:00:29 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/02 05:05:18 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/03 05:27:11 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,29 @@ t_sprite	*sprite_from_img(t_game *game, char *file_path, char type)
 	sprite->type = type;
 	sprite->sprite = img_from_file(game->mlx, file_path);
 	return (sprite);
+}
+
+void	overlay_game_sprites(t_game *game)
+{
+	int	idx;
+	int	l_idx;
+
+	idx = 0;
+	l_idx = 0;
+	while (l_idx < game->map->height)
+	{
+		while (idx < game->map->width)
+		{
+			mlx_put_image_to_window(
+				game->mlx,
+				game->window,
+				select_sprite(game->sprites, game->map->map_lines[l_idx][idx]),
+				64 * idx + 1,
+				64 * l_idx + 1
+				);
+				idx++;
+		}
+		idx = 0;
+		l_idx++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/03 04:01:39 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/03 05:31:06 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char		*get_next_line(int fd);
 
 // Pointer Utils
 void		free_and_nullify(void *ptr);
+void		destroy_player(t_game *game);
 
 // Map Utils
 int			open_map_file(char *filename);
@@ -41,6 +42,7 @@ void		is_valid_map(t_map *map);
 
 // Sprites
 void		destroy_sprites(t_game *game);
+void		*select_sprite(t_sprite **sprites, char element);
 t_mlx_img	*img_from_file(void *mlx, char *img_path);
 t_sprite	*sprite_from_img(t_game *game, char *file_path, char type);
 t_sprite	*load_player(t_game *game);
@@ -49,6 +51,7 @@ t_sprite	*load_wall(t_game *game);
 t_sprite	*load_exit(t_game *game);
 t_sprite	*load_floor(t_game *game);
 void		load_map_sprites(t_game *game, t_map *map);
+void		overlay_game_sprites(t_game *game);
 
 // Map Parsing
 t_map		*retrieve_map(char *filename);
@@ -66,6 +69,7 @@ t_player	*new_player(int x_pos, int y_pos);
 
 // Movement Utils
 void		spawn_player(t_game *game);
+int			register_movement(t_game *game, int key);
 
 // Handlers
 int			handle_close(t_game *game);
@@ -73,5 +77,8 @@ int			key_hooks(int key_code, t_game *game);
 
 // Error utils
 void		exit_and_print(int err_code, char *message);
+
+// Game Utils
+void		check_collectibles(t_game *game);
 
 #endif

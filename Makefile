@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2022/02/03 04:13:12 by jakira-p         ###   ########.fr        #
+#    Updated: 2022/02/03 05:02:37 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC_FILES = $(SRC_DIR)main.c \
 			$(UTILS_DIR)pointer_utils.c \
 			$(UTILS_DIR)get_next_line.c \
 			$(UTILS_DIR)map_utils.c \
+			$(UTILS_DIR)game_utils.c \
 			$(UTILS_DIR)struct_utils.c \
 			$(UTILS_DIR)error_utils.c \
 			$(UTILS_DIR)line_parsing_utils.c \

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_close.c                                     :+:      :+:    :+:   */
+/*   game_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 02:34:22 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/03 05:31:43 by jakira-p         ###   ########.fr       */
+/*   Created: 2022/02/03 04:58:48 by jakira-p          #+#    #+#             */
+/*   Updated: 2022/02/03 05:14:16 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-int	handle_close(t_game *game)
+void	check_collectibles(t_game *game)
 {
-	if (game->mlx)
+	if (game->player->collectible_count == game->map->collectibles)
 	{
-		mlx_clear_window(game->mlx, game->window);
-		destroy_sprites(game);
-		free_map(game->map);
-		destroy_player(game);
-		mlx_destroy_window(game->mlx, game->window);
-		mlx_destroy_display(game->mlx);
-		free(game->mlx);
+		ft_putstr_fd("Congratz, you won!\n", 1);
+		handle_close(game);
 	}
-	exit(0);
+	else
+	{
+		ft_putstr_fd("You need to collect all items before leaving!\n", 1);
+	}
 }

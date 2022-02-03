@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 20:16:11 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/02 03:31:16 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/03 04:55:44 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int	key_hooks(int key_code, t_game *game)
 		return (0);
 	if (key_code == ESC)
 		handle_close(game);
+	else
+		register_movement(game, key_code);
 	return (0);
 }
