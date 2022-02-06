@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/03 05:31:06 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/06 04:36:08 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_player	*new_player(int x_pos, int y_pos);
 
 // Movement Utils
 void		spawn_player(t_game *game);
-int			register_movement(t_game *game, int key);
+void		register_movement(t_game *game, int key);
 
 // Handlers
 int			handle_close(t_game *game);
