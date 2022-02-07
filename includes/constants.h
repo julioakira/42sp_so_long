@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:12:03 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/01/20 03:25:54 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/07 03:09:52 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define EAST 0x0064
 # define ESC 0xFF1B
 // Sprites Paths
-# define PLAYER_SPRITE "./assets/xpm/player.xpm"
+# define PLAYER_SPRITE "./assets/xpm/character_idle.xpm"
 # define COLLECTIBLE_SPRITE "./assets/xpm/collectible.xpm"
 # define EXIT_SPRITE "./assets/xpm/exit.xpm"
 # define WALL_SPRITE "./assets/xpm/wall.xpm"
