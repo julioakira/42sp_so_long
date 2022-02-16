@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 04:00:29 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/07 03:39:41 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 02:53:05 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	overlay_game_sprites(t_game *game)
 			mlx_put_image_to_window(
 				game->mlx,
 				game->window,
-				select_sprite(game->sprites, game->map->map_lines[l_idx][idx]),
+				select_sprite(game->sprites, game->map->map_lines[l_idx][idx], game->player->last_movement),
 				64 * idx + 1,
 				64 * l_idx + 1
 				);

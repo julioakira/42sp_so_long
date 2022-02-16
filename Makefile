@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2022/02/03 06:49:44 by jakira-p         ###   ########.fr        #
+#    Updated: 2022/02/16 01:43:07 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC_FILES = $(SRC_DIR)main.c \
 			$(SRC_DIR)handle_movement.c \
 			$(SRC_DIR)parse_map.c \
 			$(SRC_DIR)load_sprites.c \
+			$(SRC_DIR)load_player_sprites.c \
 			$(SRC_DIR)load_map_sprites.c \
 			$(UTILS_DIR)pointer_utils.c \
 			$(UTILS_DIR)get_next_line.c \

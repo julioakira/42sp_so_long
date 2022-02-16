@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/06 04:36:08 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 02:39:25 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,13 @@ void		is_valid_map(t_map *map);
 
 // Sprites
 void		destroy_sprites(t_game *game);
-void		*select_sprite(t_sprite **sprites, char element);
+void		*select_sprite(t_sprite **sprites, char element, char last_move);
 t_mlx_img	*img_from_file(void *mlx, char *img_path);
 t_sprite	*sprite_from_img(t_game *game, char *file_path, char type);
-t_sprite	*load_player(t_game *game);
+t_sprite	*load_player_east(t_game *game);
+t_sprite	*load_player_south(t_game *game);
+t_sprite	*load_player_west(t_game *game);
+t_sprite	*load_player_north(t_game *game);
 t_sprite	*load_collectible(t_game *game);
 t_sprite	*load_wall(t_game *game);
 t_sprite	*load_exit(t_game *game);

@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 00:46:26 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/06 05:11:06 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 01:41:56 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	move_player_west(t_game *game)
 	game->player->x_pos--;
 	m[game->player->y_pos][game->player->x_pos] = 'P';
 	game->player->steps_count++;
+	game->player->last_movement = 'W';
 	overlay_game_sprites(game);
 	return (0);
 }
@@ -41,6 +42,7 @@ int	move_player_east(t_game *game)
 	game->player->x_pos++;
 	m[game->player->y_pos][game->player->x_pos] = 'P';
 	game->player->steps_count++;
+	game->player->last_movement = 'E';
 	overlay_game_sprites(game);
 	return (0);
 }
@@ -56,6 +58,7 @@ int	move_player_south(t_game *game)
 	game->player->y_pos++;
 	m[game->player->y_pos][game->player->x_pos] = 'P';
 	game->player->steps_count++;
+	game->player->last_movement = 'S';
 	overlay_game_sprites(game);
 	return (0);
 }
@@ -71,6 +74,7 @@ int	move_player_north(t_game *game)
 	game->player->y_pos--;
 	m[game->player->y_pos][game->player->x_pos] = 'P';
 	game->player->steps_count++;
+	game->player->last_movement = 'N';
 	overlay_game_sprites(game);
 	return (0);
 }

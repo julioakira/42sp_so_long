@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:25:34 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/03 05:32:16 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 01:41:03 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ t_player	*new_player(int x_pos, int y_pos)
 	new_player->x_pos = x_pos;
 	new_player->y_pos = y_pos;
 	new_player->steps_count = 0;
+	new_player->last_movement = 'S';
 	new_player->collectible_count = 0;
 	return (new_player);
 }

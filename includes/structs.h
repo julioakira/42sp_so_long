@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/03 04:00:26 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 01:40:35 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_sprites {
 typedef struct s_player {
 	int			x_pos;
 	int			y_pos;
+	char		last_movement;
 	int			collectible_count;
 	int			steps_count;
 }	t_player;
