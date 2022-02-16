@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 02:39:25 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 03:30:54 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ void		exit_and_print(int err_code, char *message);
 
 // Game Utils
 void		check_collectibles(t_game *game);
+void		write_steps_count(t_game *game);
 
 #endif

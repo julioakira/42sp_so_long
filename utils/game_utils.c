@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 04:58:48 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 02:41:30 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 04:03:18 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,14 @@ void	check_collectibles(t_game *game)
 	}
 }
 
-// void	write_moves(t_game *game)
-// {
+void	write_steps_count(t_game *game)
+{
+	char	*joined;
+	char	*steps_count;
 
-// }
+	steps_count = ft_itoa(game->player->steps_count);
+	joined = ft_strjoin("Movement Counter: ", steps_count);
+	free(steps_count);
+	mlx_string_put(game->mlx, game->window, 10, 20, 0x000, joined);
+	free(joined);
+}
