@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 05:04:39 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 02:41:01 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 04:15:48 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void	load_map_sprites(t_game *game, t_map *map)
 			mlx_put_image_to_window(
 				game->mlx,
 				game->window,
-				select_sprite(game->sprites, map->map_lines[l_idx][idx], game->player->last_movement),
+				select_sprite(game->sprites, map->map_lines[l_idx][idx],
+					game->player->last_movement),
 				64 * idx + 1,
 				64 * l_idx + 1
 				);

@@ -6,12 +6,11 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:42:28 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 02:29:09 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 04:15:30 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
-
 
 t_sprite	*load_player_east(t_game *game)
 {
