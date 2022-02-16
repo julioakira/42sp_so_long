@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 04:58:48 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 04:16:17 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:50:09 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	check_collectibles(t_game *game)
 	{
 		ft_putstr_fd("You still have ", 1);
 		ft_putnbr_fd(c, 1);
-		ft_putstr_fd(" keys left to collect.\n", 1);
+		ft_putstr_fd(" fruits left to collect.\n", 1);
 	}
 }
 
