@@ -6,7 +6,7 @@
 #    By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:51:50 by jakira-p          #+#    #+#              #
-#    Updated: 2022/02/16 01:43:07 by jakira-p         ###   ########.fr        #
+#    Updated: 2022/02/25 02:52:23 by jakira-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,8 +97,7 @@ fclean: clean
 	$(MAKE) -s -C ./mlx clean
 	@echo "[X] MiniLibX cleaned successfully"
 
-re:
-	fclean all
+re: fclean all
 
 libft:
 	@echo "[ ] Compiling libft..."
