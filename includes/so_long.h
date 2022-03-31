@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 03:30:54 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/03/31 04:11:24 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <fcntl.h>
 # include "constants.h"
 # include "structs.h"
-// Remove later
-# include <stdio.h>
 
 // Check key hook events
 
