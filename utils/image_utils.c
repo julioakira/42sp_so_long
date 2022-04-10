@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 04:00:29 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 04:16:12 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:27:32 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_sprite	*sprite_from_img(t_game *game, char *file_path, char type)
 	return (sprite);
 }
 
-void	overlay_game_sprites(t_game *game)
+int	overlay_game_sprites(t_game *game)
 {
 	int	idx;
 	int	l_idx;
@@ -64,4 +64,5 @@ void	overlay_game_sprites(t_game *game)
 		idx = 0;
 		l_idx++;
 	}
+	return (0);
 }

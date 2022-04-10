@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:25:09 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/03/31 04:11:24 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:28:12 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_sprite	*load_wall(t_game *game);
 t_sprite	*load_exit(t_game *game);
 t_sprite	*load_floor(t_game *game);
 void		load_map_sprites(t_game *game, t_map *map);
-void		overlay_game_sprites(t_game *game);
+int			overlay_game_sprites(t_game *game);
 
 // Map Parsing
 t_map		*retrieve_map(char *filename);
