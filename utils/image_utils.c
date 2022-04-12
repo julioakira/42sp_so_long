@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 04:00:29 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/04/10 02:27:32 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/04/12 03:50:06 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,7 @@ int	overlay_game_sprites(t_game *game)
 		idx = 0;
 		l_idx++;
 	}
+	usleep(100000);
+	write_steps_count(game);
 	return (0);
 }
