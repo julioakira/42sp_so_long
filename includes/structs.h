@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 04:15:00 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/02/16 01:40:35 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/04/12 04:24:57 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_map {
 // Needs to int move_count
 typedef struct s_game {
 	void		*mlx;
+	int			tick;
 	void		*window;
 	t_map		*map;
 	t_player	*player;
