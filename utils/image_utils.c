@@ -6,7 +6,7 @@
 /*   By: jakira-p <jakira-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 04:00:29 by jakira-p          #+#    #+#             */
-/*   Updated: 2022/04/13 02:24:31 by jakira-p         ###   ########.fr       */
+/*   Updated: 2022/04/13 02:52:08 by jakira-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ int	game_tick(t_game *game)
 
 	tick_rate = 10000;
 	if (game->tick % tick_rate == 1000)
-	{
 		overlay_game_sprites(game);
-	}
 	game->tick++;
 	return (0);
 }
